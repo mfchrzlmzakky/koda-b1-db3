@@ -154,3 +154,31 @@
 -- SELECT id, first_name, last_name FROM actors  ORDER BY first_name ASC LIMIT 100 OFFSET 0;
 -- SELECT id, first_name, last_name FROM actors  ORDER BY id ASC LIMIT 100 OFFSET 220;
 -- SELECT id, first_name, last_name FROM actors LIMIT 100 OFFSET 220;
+
+-- JOIN / INNER JOIN
+-- SELECT movies.name FROM movies
+-- JOIN movies_genres ON movies.id = movies_genres.movie_id
+-- LIMIT 10
+-- SELECT kiri.name FROM movies kiri
+-- JOIN movies_genres kanan ON kiri.id = kanan.movie_id
+-- LIMIT 10
+-- SELECT kiri.id, kiri.name, kanan.genre FROM movies kiri
+-- JOIN movies_genres kanan ON kiri.id = kanan.movie_id
+-- LIMIT 10
+-- SELECT kiri.id AS au, kiri.name, kanan.genre FROM movies kiri
+-- JOIN movies_genres kanan ON kiri.id = kanan.movie_id
+-- LIMIT 10
+
+-- LEFT JOIN
+-- SELECT movies.id, movies.name, movies_genres.genre FROM movies LEFT JOIN movies_genres ON movies_genres.movie_id = movies.id LIMIT 10;
+
+-- RIGHT JOIN
+-- SELECT movies.id, movies.name, movies_genres.genre FROM movies RIGHT JOIN movies_genres ON movies_genres.movie_id = movies.id LIMIT 10;
+
+SELECT actors.id AS Actor, actors.first_name, actors.last_name, roles.role, movies.name AS Movie
+FROM actors
+LEFT JOIN roles
+  ON actors.id = roles.actor_id
+LEFT JOIN movies
+  ON roles.movie_id = movies.id
+-- LIMIT 10
