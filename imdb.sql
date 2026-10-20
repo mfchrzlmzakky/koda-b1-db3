@@ -175,10 +175,20 @@
 -- RIGHT JOIN
 -- SELECT movies.id, movies.name, movies_genres.genre FROM movies RIGHT JOIN movies_genres ON movies_genres.movie_id = movies.id LIMIT 10;
 
-SELECT actors.id AS Actor, actors.first_name, actors.last_name, roles.role, movies.name AS Movie
-FROM actors
-LEFT JOIN roles
-  ON actors.id = roles.actor_id
-LEFT JOIN movies
-  ON roles.movie_id = movies.id
+-- SELECT actors.id AS Actor, actors.first_name, actors.last_name, roles.role, movies.name AS Movie
+-- FROM actors
+-- LEFT JOIN roles
+--   ON actors.id = roles.actor_id
+-- LEFT JOIN movies
+--   ON roles.movie_id = movies.id
 -- LIMIT 10
+
+
+-- CONSTRAINT
+-- CREATE TABLE user_identity(
+--   id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+--   name VARCHAR(100) not NULL
+-- )
+
+INSERT INTO user_identity (id, name)
+OVERRIDE
