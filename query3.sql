@@ -7,7 +7,7 @@
 -- ORDER BY d.id ASC
 
 -- 2
--- SELECT a.id AS actor_id, a.first_name, a.last_name, string_agg(DISTINCT r.role , ', ') as actor_role
+-- SELECT a.id AS actor_id, a.first_name, a.last_name, string_agg(DISTINCT r.role , ', ') as actor_role, COUNT(DISTINCT r.role)
 -- FROM actors a 
 -- JOIN roles r 
 --   ON a.id = r.actor_id
@@ -21,7 +21,7 @@
 --   ON d.id = md.director_id
 -- GROUP BY d.id
 -- ORDER BY movie_total DESC
--- LIMIT 1
+-- LIMIT 1;
 
 -- 4
 -- SELECT m.year, COUNT(id) AS total_film
